@@ -39,11 +39,14 @@ class App
 
       line
       blank_line
+
       print 'Product ID: '
+
       product_id = gets.chomp
       break if product_id == 'x'
 
       print 'Quantity: '
+      
       quantity = gets.chomp
       break if quantity == 'x'
 
