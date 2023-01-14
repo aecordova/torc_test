@@ -28,22 +28,30 @@ class App
 
   def start
     while true
+      clear_scr
+      
+      title(" SALES TAX CALCULATOR ")
+      blank_line
+      puts "  Enter product id and quantity to add to order. Enter 'x' to print receipt."
+      blank_line
       display_menu
 
       current_order.display unless current_order.empty?
 
-      puts "\nEnter product id and quantity to add to order. Enter 'x' to print receipt. \n"
+      line
+      blank_line
       print "Product ID: "
       product_id = gets.chomp
-      
+      break if product_id == 'x'
+
       print "Quantity: "
       quantity = gets.chomp
-      print_receipt if qproduct_id == 'x' || quantity == 'x'  
-      break if product_id == 'x' || quantity == 'x'     
-      clear_scr
+      break if quantity == 'x'     
 
       current_order.add_product(product_id, quantity.to_i)
     end
+
+    print_receipt
   end
 end
 

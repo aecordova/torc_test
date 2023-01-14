@@ -1,7 +1,7 @@
 class Tax
   TAX_RATE = 0.1
   IMPORT_TAX_RATE = 0.05
-  EXEMPT_CATEGORIES = ["book", "food", "medical"]
+  EXEMPT_CATEGORIES = ["books", "food", "medical"]
 
   def self.calculate(product)
     tax = 0.0

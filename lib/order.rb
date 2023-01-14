@@ -26,7 +26,7 @@ class Order
   def sub_total
     contents.map do |line_item|
       product = line_item[:product]
-      product.price * line_item[:quantity]
+      (product.price + Tax.calculate(product)) * line_item[:quantity]
     end.inject(:+)
   end
 
@@ -38,21 +38,21 @@ class Order
   end
 
   def display(type = :order)
-    line
-    puts "#{type.to_s.capitalize}: "
+    title(" #{type.to_s.capitalize} ")
     contents.each do |line_item|
       product = line_item[:product]
-      puts " - #{tab_pad("#{product.name}")}#{line_item[:quantity]} x $ #{product.price}"
+      product_line(product, line_item[:quantity])
     end
 
     line
-    puts "Subtotal:                                  $ #{sub_total}"
+    summary_line("Subtotal:", "$ #{format("%.2f", sub_total)}")
   end
 
   def receipt
     display(:receipt)
-    puts "Sales Taxes:                               $ #{order_tax}"
+    summary_line("Sales Taxes:", "$ #{format("%.2f", order_tax)}")
     line
-    puts "Total:                                     $ #{sub_total + order_tax}"
+    summary_line("Total:", "$ #{format("%.2f", sub_total + order_tax)}")
+    line
   end
 end
