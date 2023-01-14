@@ -1,0 +1,9 @@
+id,name,price,category
+1,"book",12.49,books
+2,"music CD",14.99,general
+3,"chocolate bar",0.85,food
+4,"imported box of chocolates",10.00,food
+5,"imported bottle of perfume",47.50,imported goods
+6,"bottle of perfume",18.99,general
+7,"packet of headache pills",9.75,medical
+8,"imported boxes of chocolates",11.25, food
