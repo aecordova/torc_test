@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Product
   PRODUCTS_DB = 'data/products.csv'
 

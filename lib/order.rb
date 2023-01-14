@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Order
   def initialize
     @products = Hash.new(0)
@@ -19,7 +21,7 @@ class Order
   def contents
     @products.map do |product_id, quantity|
       product = Product.find(product_id)
-      { product: product, quantity: quantity }
+      { product:, quantity: }
     end
   end
 

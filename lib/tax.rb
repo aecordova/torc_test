@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Tax
   TAX_RATE = 0.1
   IMPORT_TAX_RATE = 0.05
-  EXEMPT_CATEGORIES = %w[books food medical]
+  EXEMPT_CATEGORIES = %w[books food medical].freeze
 
   def self.calculate(product)
     tax = 0.0

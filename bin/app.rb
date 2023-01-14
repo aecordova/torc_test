@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'pry'
 require_relative '../lib/display_elements'
@@ -5,7 +7,7 @@ require_relative '../lib/product'
 require_relative '../lib/order'
 require_relative '../lib/tax'
 
-include DisplayElemets
+include DisplayElements
 
 class App
   def initialize
@@ -26,7 +28,7 @@ class App
   end
 
   def start
-    while true
+    loop do
       clear_scr
 
       title(' SALES TAX CALCULATOR ')
@@ -46,7 +48,7 @@ class App
       break if product_id == 'x'
 
       print 'Quantity: '
-      
+
       quantity = gets.chomp
       break if quantity == 'x'
 

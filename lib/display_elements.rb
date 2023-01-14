@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DisplayElements
   def display_menu
     title('MENU')
@@ -17,7 +19,7 @@ module DisplayElements
     length  = 80 - title.length
     padding = length / 2
     line = '-' * padding + title + '-' * padding
-    puts line.length < 80 ? line + '-' : line
+    puts line.length < 80 ? "#{line}-" : line
   end
 
   def line
