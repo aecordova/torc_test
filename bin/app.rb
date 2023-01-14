@@ -1,6 +1,6 @@
 require 'csv'
 require 'pry'
-require_relative '../lib/display_elemets'
+require_relative '../lib/display_elements'
 require_relative '../lib/product'
 require_relative '../lib/order'
 require_relative '../lib/tax'

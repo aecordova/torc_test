@@ -1,4 +1,4 @@
-module DisplayElemets
+module DisplayElements
   def display_menu
     title('MENU')
 
