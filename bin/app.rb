@@ -1,11 +1,11 @@
 require 'csv'
 require 'pry'
-require_relative '../lib/menu'
+require_relative '../lib/display_elemets'
 require_relative '../lib/product'
 require_relative '../lib/order'
 require_relative '../lib/tax'
 
-include Menu
+include DisplayElemets
 
 class App
   def initialize
@@ -25,12 +25,11 @@ class App
     current_order.receipt
   end
 
-
   def start
     while true
       clear_scr
-      
-      title(" SALES TAX CALCULATOR ")
+
+      title(' SALES TAX CALCULATOR ')
       blank_line
       puts "  Enter product id and quantity to add to order. Enter 'x' to print receipt."
       blank_line
@@ -40,13 +39,13 @@ class App
 
       line
       blank_line
-      print "Product ID: "
+      print 'Product ID: '
       product_id = gets.chomp
       break if product_id == 'x'
 
-      print "Quantity: "
+      print 'Quantity: '
       quantity = gets.chomp
-      break if quantity == 'x'     
+      break if quantity == 'x'
 
       current_order.add_product(product_id, quantity.to_i)
     end

@@ -3,7 +3,7 @@ class Order
     @products = Hash.new(0)
     @tax = 0
   end
-  
+
   def add_product(product_id, quantity = 1)
     @products[product_id] += quantity
   end
@@ -15,7 +15,7 @@ class Order
   def empty?
     @products.empty?
   end
-  
+
   def contents
     @products.map do |product_id, quantity|
       product = Product.find(product_id)
@@ -45,14 +45,14 @@ class Order
     end
 
     line
-    summary_line("Subtotal:", "$ #{format("%.2f", sub_total)}")
+    summary_line('Subtotal:', "$ #{format('%.2f', sub_total)}")
   end
 
   def receipt
     display(:receipt)
-    summary_line("Sales Taxes:", "$ #{format("%.2f", order_tax)}")
+    summary_line('Sales Taxes:', "$ #{format('%.2f', order_tax)}")
     line
-    summary_line("Total:", "$ #{format("%.2f", sub_total + order_tax)}")
+    summary_line('Total:', "$ #{format('%.2f', sub_total + order_tax)}")
     line
   end
 end
